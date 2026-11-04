@@ -1,4 +1,4 @@
-# NOVA-AI# NOVA AI
+# NOVA AI
 Personal Artificial Intelligence Assistant
 
 - AI Chat
