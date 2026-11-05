@@ -1,35 +1,71 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#10172a">
-  <title>NOVA AI</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10172a">
+<title>NOVA AI</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  background:linear-gradient(145deg,#10172a,#172b4d);
+  color:white;
+  text-align:center;
+  min-height:100vh;
+}
+header{padding:45px 15px 25px}
+h1{font-size:42px;color:#55d6ff;margin:10px}
+.subtitle{color:#c6d7eb}
+main{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  padding:20px;
+  max-width:650px;
+  margin:auto;
+}
+a{
+  text-decoration:none;
+  color:white;
+}
+.feature{
+  background:#ffffff12;
+  border:1px solid #ffffff25;
+  border-radius:18px;
+  padding:25px 8px;
+  min-height:110px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:12px;
+  font-size:15px;
+}
+.feature:active{background:#176b91}
+.icon{font-size:30px}
+footer{padding:25px;color:#aabbd0;font-size:13px}
+</style>
 </head>
 <body>
+<header>
+<h1>NOVA AI ✨</h1>
+<p class="subtitle">دستیار هوشمند شخصی شما</p>
+<p>یک دنیا امکانات در یک برنامه</p>
+</header>
 
-  <header>
-    <h1>NOVA AI</h1>
-    <p class="subtitle">دستیار هوشمند شخصی شما</p>
-    <p>به دنیای هوش مصنوعی خوش آمدید</p>
-  </header>
+<main>
+<a href="chat.html"><div class="feature"><span class="icon">💬</span>گفت‌وگوی هوشمند</div></a>
+<a href="chat.html"><div class="feature"><span class="icon">🎙️</span>دستیار صوتی</div></a>
+<a href="chat.html"><div class="feature"><span class="icon">🎨</span>ساخت تصویر</div></a>
+<a href="chat.html"><div class="feature"><span class="icon">🎬</span>ساخت ویدئو</div></a>
+<a href="chat.html"><div class="feature"><span class="icon">✍️</span>قلم هوشمند</div></a>
+<a href="chat.html"><div class="feature"><span class="icon">🌍</span>مترجم هوشمند</div></a>
+</main>
 
-  <main class="features">
-    <div class="feature"><span>💬</span>گفت‌وگوی هوشمند</div>
-    <div class="feature"><span>🎙️</span>دستیار صوتی</div>
-    <div class="feature"><span>🎨</span>ساخت تصویر</div>
-    <div class="feature"><span>🎬</span>ساخت ویدئو</div>
-    <div class="feature"><span>✍️</span>قلم هوشمند</div>
-    <div class="feature"><span>🌍</span>مترجم هوشمند</div>
-    <div class="feature"><span>🇮🇷</span>پشتیبانی فارسی</div>
-  </main>
-
-  <footer>
-    NOVA AI © 2026
-    <p>نسخه اولیه - در حال توسعه</p>
-  </footer>
-
-  <script src="script.js"></script>
+<footer>
+NOVA AI © 2026
+<p>همیشه در حال پیشرفت 🚀</p>
+</footer>
 </body>
 </html>
