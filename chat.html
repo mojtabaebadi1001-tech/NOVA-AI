@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NOVA AI - Chat</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#10172a;color:white;
+ font-family:Tahoma,Arial,sans-serif;
+ display:flex;flex-direction:column;height:100vh
+}
+header{
+ padding:18px;background:#172b4d;
+ text-align:center;color:#55d6ff;font-size:22px
+}
+#messages{
+ flex:1;overflow-y:auto;padding:15px;
+ display:flex;flex-direction:column;gap:12px
+}
+.msg{
+ padding:13px;border-radius:15px;
+ max-width:85%;line-height:1.8
+}
+.bot{background:#263b5b;align-self:flex-start}
+.user{background:#087eaa;align-self:flex-end}
+form{
+ display:flex;gap:8px;padding:12px;
+ background:#172b4d
+}
+input{
+ flex:1;min-width:0;padding:14px;
+ border:0;border-radius:12px;font-size:15px
+}
+button{
+ border:0;border-radius:12px;
+ background:#16a6d2;color:white;
+ padding:12px 18px;font-size:15px
+}
+a{color:#55d6ff;text-decoration:none}
+</style>
+</head>
+<body>
+<header>✨ NOVA AI</header>
+
+<div id="messages">
+<div class="msg bot">
+سلام! من نوا هستم. 🤖<br>
+به گفت‌وگوی هوشمند خوش آمدی.
+چه کاری می‌توانم برایت انجام بدهم؟
+</div>
+</div>
+
+<form id="chatForm">
+<input id="messageInput" placeholder="پیامت را بنویس..." autocomplete="off">
+<button type="submit">ارسال</button>
+</form>
+
+<script>
+const form=document.getElementById("chatForm");
+const input=document.getElementById("messageInput");
+const messages=document.getElementById("messages");
+
+form.addEventListener("submit",function(e){
+ e.preventDefault();
+ const value=input.value.trim();
+ if(!value)return;
+
+ const user=document.createElement("div");
+ user.className="msg user";
+ user.textContent=value;
+ messages.appendChild(user);
+ input.value="";
+
+ const bot=document.createElement("div");
+ bot.className="msg bot";
+ bot.textContent="پیامت دریافت شد! این نسخه آزمایشی نوا است. برای پاسخ هوشمند واقعی باید موتور هوش مصنوعی به آن متصل شود.";
+ messages.appendChild(bot);
+ messages.scrollTop=messages.scrollHeight;
+});
+</script>
+</body>
+</html>
