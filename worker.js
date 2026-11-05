@@ -1,17 +1,22 @@
 const MODEL = "@cf/meta/llama-3.1-8b-instruct";
-const ALLOWED_ORIGIN = "https://mojtabaebadi1001-tech.github.io";
+const ALLOWED_ORIGINS = new Set([
+  "https://nova-ai-sultan-2026.netlify.app",
+  "https://mojtabaebadi1001-tech.github.io"
+]);
 
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
-    const corsOrigin = origin === ALLOWED_ORIGIN ? origin : ALLOWED_ORIGIN;
     const corsHeaders = {
-      "Access-Control-Allow-Origin": corsOrigin,
       "Access-Control-Allow-Methods": "POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
       "Content-Type": "application/json; charset=utf-8",
       "Vary": "Origin"
     };
+
+    if (ALLOWED_ORIGINS.has(origin)) {
+      corsHeaders["Access-Control-Allow-Origin"] = origin;
+    }
 
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: corsHeaders });
