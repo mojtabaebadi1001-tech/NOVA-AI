@@ -30,7 +30,7 @@ button:disabled{opacity:.55}
 <button id="sendButton" type="submit">ارسال</button>
 </form>
 <script>
-const API_URL = "https://throbbing-thunder-c3b3.sayedmujtabaebadi2.workers.dev";
+const API_URL = "/.netlify/functions/chat";
 const form = document.getElementById("chatForm");
 const input = document.getElementById("messageInput");
 const messagesEl = document.getElementById("messages");
@@ -65,7 +65,7 @@ form.addEventListener("submit", async (event) => {
     waiting.textContent = data.reply;
     conversation.push({ role: "assistant", content: data.reply });
   } catch (error) {
-    waiting.textContent = "ارتباط با نوا برقرار نشد: " + error.message + "\nلطفاً تنظیمات Worker و اتصال AI را بررسی کن.";
+    waiting.textContent = "ارتباط با نوا برقرار نشد: " + error.message + "\nلطفاً تنظیمات کلید هوش مصنوعی در Netlify را بررسی کن.";
     conversation.pop();
   } finally {
     sendButton.disabled = false;
